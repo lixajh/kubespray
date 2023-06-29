@@ -11,7 +11,8 @@
 
 - name: Install required packages
   apt:
-    upgrade: yes
+  #这里update会导致ubuntu内核升级
+    # upgrade: yes
     update_cache: yes
     cache_valid_time: 3600
     name: "{{ item }}"

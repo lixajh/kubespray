@@ -31,7 +31,8 @@
   roles:
     - { role: kubespray-defaults}
     - { role: kubernetes/preinstall, tags: preinstall }
-    - { role: "container-engine", tags: "container-engine", when: deploy_container_engine|default(true) }
+    # 这一步要删除，他会卸载docker重新安装，我们docker都是安装完成的，不需要这一步
+    # - { role: "container-engine", tags: "container-engine", when: deploy_container_engine|default(true) }
     - { role: download, tags: download, when: "not skip_downloads" }
   environment: "{{ proxy_env }}"
 
